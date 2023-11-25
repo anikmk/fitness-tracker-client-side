@@ -1,0 +1,69 @@
+[
+    {
+      "_id": "1",
+      "trainerName": "John Smith",
+      "profileImage": "john_smith.jpg",
+      "experience": "Certified personal trainer with 10+ years of experience.",
+      "availableTimeSlot": "9 AM - 12 PM, 3 PM - 7 PM",
+      "email": "john@example.com",
+      "age": 35,
+      "availableTimeWeek": "Monday, Wednesday, Friday",
+      "availableTimeDay": "Morning, Afternoon, Evening"
+    },
+    {
+      "_id": "2",
+      "trainerName": "Emily Johnson",
+      "profileImage": "emily_johnson.jpg",
+      "experience": "Fitness enthusiast turned professional trainer.",
+      "availableTimeSlot": "8 AM - 11 AM, 5 PM - 8 PM",
+      "email": "emily@example.com",
+      "age": 28,
+      "availableTimeWeek": "Tuesday, Thursday, Saturday",
+      "availableTimeDay": "Morning, Evening"
+    },
+    {
+      "_id": "3",
+      "trainerName": "Michael Brown",
+      "profileImage": "michael_brown.jpg",
+      "experience": "Specializing in strength and conditioning for athletes.",
+      "availableTimeSlot": "6 AM - 10 AM, 4 PM - 9 PM",
+      "email": "michael@example.com",
+      "age": 42,
+      "availableTimeWeek": "Monday - Saturday",
+      "availableTimeDay": "Morning, Evening"
+    },
+    {
+      "_id": "4",
+      "trainerName": "Sophia Garcia",
+      "profileImage": "sophia_garcia.jpg",
+      "experience": "Focused on holistic wellness and lifestyle coaching.",
+      "availableTimeSlot": "7 AM - 12 PM, 2 PM - 6 PM",
+      "email": "sophia@example.com",
+      "age": 30,
+      "availableTimeWeek": "Monday, Wednesday, Friday, Sunday",
+      "availableTimeDay": "Morning, Afternoon"
+    },
+    {
+      "_id": "5",
+      "trainerName": "David Martinez",
+      "profileImage": "david_martinez.jpg",
+      "experience": "Former athlete passionate about functional training.",
+      "availableTimeSlot": "10 AM - 1 PM, 4 PM - 8 PM",
+      "email": "david@example.com",
+      "age": 33,
+      "availableTimeWeek": "Tuesday, Thursday, Saturday",
+      "availableTimeDay": "Morning, Evening"
+    },
+    {
+      "_id": "6",
+      "trainerName": "Olivia Wilson",
+      "profileImage": "olivia_wilson.jpg",
+      "experience": "Yoga instructor promoting mindfulness and well-being.",
+      "availableTimeSlot": "6 AM - 9 AM, 5 PM - 8 PM",
+      "email": "olivia@example.com",
+      "age": 29,
+      "availableTimeWeek": "Monday - Saturday",
+      "availableTimeDay": "Morning, Evening"
+    }
+  ]
+  
