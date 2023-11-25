@@ -9,7 +9,7 @@ import { Rating } from "@smastrom/react-rating";
 import useReview from "../../../hooks/useReview";
 
 const Testimonials = () => {
-  const [reviews] = useReview();
+  const [reviews] = useReview([]);
   return (
     <div className="py-20 mx-20">
       <SectionTitle

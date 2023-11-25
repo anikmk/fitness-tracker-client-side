@@ -6,12 +6,16 @@ import Login from "../Login/Login";
 import SignUp from "../SignUp/SignUp";
 import PrivetRouter from "./PrivetRouter";
 import Trainer from "../Pages/Trainer/Trainer";
+import TrainerDetails from "../Pages/Trainer/TrainerDetails";
+import BeTrainer from "../Pages/Trainer/BeTrainer";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 
  export const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement:<ErrorPage></ErrorPage>,
       children: [
         {
           path: "/",
@@ -24,6 +28,15 @@ import Trainer from "../Pages/Trainer/Trainer";
         {
           path:'trainer',
           element:<Trainer></Trainer>
+        },
+        {
+          path:'trainerdetails/:id',
+          element:<TrainerDetails></TrainerDetails>,
+          loader:async({params}) => await fetch(`http://localhost:5000/trainer/${params.id}`)
+        },
+        {
+          path:'betrainer',
+          element:<BeTrainer></BeTrainer>
         },
         {
           path:'login',

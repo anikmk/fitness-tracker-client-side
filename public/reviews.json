@@ -1,36 +1,30 @@
 [
     {
-      "_id": "1",
       "name": "Emma",
       "details": "Improved endurance and achieved weight loss goals.",
       "rating": 4
     },
     {
-      "_id": "2",
       "name": "Liam",
       "details": "Notable muscle gain and increased flexibility.",
       "rating": 5
     },
     {
-      "_id": "3",
       "name": "Olivia",
       "details": "Enhanced overall fitness and core strength.",
       "rating": 3
     },
     {
-      "_id": "4",
       "name": "Noah",
       "details": "Successful weight management and increased energy levels.",
       "rating": 4
     },
     {
-      "_id": "5",
       "name": "Ava",
       "details": "Improved cardiovascular health and stress reduction.",
       "rating": 5
     },
     {
-      "_id": "6",
       "name": "William",
       "details": "Boosted confidence and better sleep quality.",
       "rating": 4
