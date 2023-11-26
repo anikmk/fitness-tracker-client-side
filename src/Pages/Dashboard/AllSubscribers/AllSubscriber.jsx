@@ -6,7 +6,6 @@ import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 const AllSubscriber = () => {
     const [subscribers,setSubscribers] = useState([]);
-    console.log(subscribers)
     const axiosPublic = useAxiosPublic();
     axiosPublic.get('/newslatter')
     .then(res=>{

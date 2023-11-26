@@ -34,7 +34,9 @@ const BeTrainer = () => {
             age:parseFloat(data.age),
             availableTimeWeek:data.availableTimeWeek,
             availableTimeDay:data.availableTimeDay,
-            profileImage:res.data.data.display_url
+            profileImage:res.data.data.display_url,
+            status:'pendig',
+            joiningDate: new Date().toDateString()
           }
           const trainerRes = await axiosSecure.post('/trainer',trainerInfo);
           console.log(trainerRes.data)

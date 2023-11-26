@@ -1,21 +1,25 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaAd, FaBook, FaCalendar, FaEnvelope, FaHome, FaList, FaSearch, FaShoppingCart, FaUser, FaUtensils } from "react-icons/fa";
-
+import { FaAd, FaCalendar, FaEnvelope, FaHome, FaList, FaSearch, FaShoppingCart, FaUserCog, FaUserGraduate, FaUsers, FaWpforms } from "react-icons/fa";
+import { SiManageiq } from "react-icons/si";
+import { MdOutlineClass } from "react-icons/md";
+import { GiMoneyStack } from "react-icons/gi";
 const Dashboard = () => {
-    const isAdmin = true;
+    const isAdmin = false;
+    const isTrainer = true;
     return (
         <div className="flex">
-            <div className="w-64 min-h-full bg-orange-400">
-                <ul className="menu">
+            <div className="w-64 h-screen bg-orange-400">
+                <ul className="menu text-base font-semibold">
                     {
                         isAdmin ? <>
                         <li>
-                    <NavLink to='/dashboard/subscribers'> <FaUser></FaUser>
+                    <NavLink to='/dashboard/subscribers'> 
+                    <FaUsers />
                     All subscribers
                     </NavLink>
                     </li>
                     <li>
-                    <NavLink to='/dashboard/alltrainers'> <FaUtensils></FaUtensils>
+                    <NavLink to='/dashboard/alltrainers'> <FaUserGraduate />
                     All Trainers
                     </NavLink>
                     </li>
@@ -25,11 +29,42 @@ const Dashboard = () => {
                     </NavLink>
                     </li>
                     <li>
-                    <NavLink to='/dashboard/balance'> <FaBook></FaBook>
+                        <NavLink to='/dashboard/addnewforum'> <FaWpforms />
+                        Add new Forum
+                        </NavLink>
+                        </li>
+                    <li>
+                    <NavLink to='/dashboard/balance'> <GiMoneyStack />
                     Balance
                     </NavLink>
                     </li>
-                        </> : <>
+                        </> : 
+                        // Admin Trainer
+                        isTrainer ? 
+                        <>
+                        <li>
+                        <NavLink to='/dashboard/manageslotes'> <SiManageiq />
+                        Manage Slots
+                        </NavLink>
+                        </li>
+                        <li>
+                        <NavLink to='/dashboard/managemembers'> <FaUserCog />
+                        Manage member
+                        </NavLink>
+                        </li>
+                        <li>
+                        <NavLink to='/dashboard/addnewforum'> <FaWpforms />
+                        Add new Forum
+                        </NavLink>
+                        </li>
+                        <li>
+                        <NavLink to='/dashboard/addnewclass'> <MdOutlineClass />
+                        Add new Class
+                        </NavLink>
+                        </li>
+                        </>
+                        :
+                        <>
                         <li>
                     <NavLink to='/dashboard/userHome'> <FaHome></FaHome>
                     User Home

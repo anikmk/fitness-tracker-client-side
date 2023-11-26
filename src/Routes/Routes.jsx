@@ -13,6 +13,8 @@ import TrainerBooked from "../Components/TrainerBooked/TrainerBooked";
 import Payment from "../Components/Payment/Payment";
 import Dashboard from "../Layout/Dashboard";
 import AllSubscriber from "../Pages/Dashboard/AllSubscribers/AllSubscriber";
+import AllTrainers from "../Pages/Dashboard/AllTrainers/AllTrainers";
+import AddNewClass from "../Pages/Dashboard/AddNewClass/AddNewClass";
 
 
 
@@ -72,6 +74,15 @@ import AllSubscriber from "../Pages/Dashboard/AllSubscribers/AllSubscriber";
         {
           path:'subscribers',
           element:<PrivetRouter><AllSubscriber></AllSubscriber></PrivetRouter>
+        },
+        {
+          path:'alltrainers',
+          element:<AllTrainers></AllTrainers>
+        },
+        // admin trainer
+        {
+          path:'addnewclass',
+          element:<AddNewClass></AddNewClass>
         }
       ]
     }
