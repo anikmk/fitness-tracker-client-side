@@ -11,6 +11,8 @@ import BeTrainer from "../Pages/Trainer/BeTrainer";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import TrainerBooked from "../Components/TrainerBooked/TrainerBooked";
 import Payment from "../Components/Payment/Payment";
+import Dashboard from "../Layout/Dashboard";
+import Cart from "../Pages/Dashboard/Cart/Cart";
 
 
  export const router = createBrowserRouter([
@@ -60,4 +62,15 @@ import Payment from "../Components/Payment/Payment";
       
       ],
     },
+
+    {
+      path:'dashboard',
+      element:<PrivetRouter><Dashboard></Dashboard></PrivetRouter>,
+      children:[
+        {
+          path:'cart',
+          element:<Cart></Cart>
+        }
+      ]
+    }
   ]);
