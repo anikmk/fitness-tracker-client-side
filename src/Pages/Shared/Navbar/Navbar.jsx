@@ -22,7 +22,7 @@ const Navbar = () => {
         <Link>Classes</Link>
       </li>
       <li>
-        <Link to='/dashboard/cart'>Dashboard</Link>
+        <Link to='/dashboard'>Dashboard</Link>
       </li>
       <li>
         <Link>Community</Link>

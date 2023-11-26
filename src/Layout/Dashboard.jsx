@@ -2,7 +2,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import { FaAd, FaBook, FaCalendar, FaEnvelope, FaHome, FaList, FaSearch, FaShoppingCart, FaUser, FaUtensils } from "react-icons/fa";
 
 const Dashboard = () => {
-    const isAdmin = '';
+    const isAdmin = true;
     return (
         <div className="flex">
             <div className="w-64 min-h-full bg-orange-400">
@@ -10,28 +10,23 @@ const Dashboard = () => {
                     {
                         isAdmin ? <>
                         <li>
-                    <NavLink to='/dashboard/adminHome'> <FaHome></FaHome>
-                    add
+                    <NavLink to='/dashboard/subscribers'> <FaUser></FaUser>
+                    All subscribers
                     </NavLink>
                     </li>
                     <li>
-                    <NavLink to='/dashboard/addItems'> <FaUtensils></FaUtensils>
-                    Add Items
+                    <NavLink to='/dashboard/alltrainers'> <FaUtensils></FaUtensils>
+                    All Trainers
                     </NavLink>
                     </li>
                     <li>
-                    <NavLink to='/dashboard/manageItems'> <FaList></FaList>
-                    Manage Items
+                    <NavLink to='/dashboard/appliedtrainer'> <FaList></FaList>
+                    Applied Trainer
                     </NavLink>
                     </li>
                     <li>
-                    <NavLink to='/dashboard/bookings'> <FaBook></FaBook>
-                    Manage Bookings
-                    </NavLink>
-                    </li>
-                    <li>
-                    <NavLink to='/dashboard/users'> <FaUser></FaUser>
-                    All users
+                    <NavLink to='/dashboard/balance'> <FaBook></FaBook>
+                    Balance
                     </NavLink>
                     </li>
                         </> : <>
@@ -46,7 +41,7 @@ const Dashboard = () => {
                     </NavLink>
                     </li>
                     <li>
-                    <NavLink to='/dashboard/cart'> <FaShoppingCart></FaShoppingCart>
+                    <NavLink to='/dashboard/'> <FaShoppingCart></FaShoppingCart>
                     My Cart 
                     </NavLink>
                     </li>

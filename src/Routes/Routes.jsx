@@ -12,7 +12,8 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import TrainerBooked from "../Components/TrainerBooked/TrainerBooked";
 import Payment from "../Components/Payment/Payment";
 import Dashboard from "../Layout/Dashboard";
-import Cart from "../Pages/Dashboard/Cart/Cart";
+import AllSubscriber from "../Pages/Dashboard/AllSubscribers/AllSubscriber";
+
 
 
  export const router = createBrowserRouter([
@@ -67,9 +68,10 @@ import Cart from "../Pages/Dashboard/Cart/Cart";
       path:'dashboard',
       element:<PrivetRouter><Dashboard></Dashboard></PrivetRouter>,
       children:[
+        // admin routes
         {
-          path:'cart',
-          element:<Cart></Cart>
+          path:'subscribers',
+          element:<PrivetRouter><AllSubscriber></AllSubscriber></PrivetRouter>
         }
       ]
     }
