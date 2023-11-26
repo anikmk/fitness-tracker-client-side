@@ -15,6 +15,8 @@ import Dashboard from "../Layout/Dashboard";
 import AllSubscriber from "../Pages/Dashboard/AllSubscribers/AllSubscriber";
 import AllTrainers from "../Pages/Dashboard/AllTrainers/AllTrainers";
 import AddNewClass from "../Pages/Dashboard/AddNewClass/AddNewClass";
+import Class from "../Pages/Class/Class";
+import ClassDetails from "../Pages/Class/ClassDetails";
 
 
 
@@ -35,6 +37,16 @@ import AddNewClass from "../Pages/Dashboard/AddNewClass/AddNewClass";
         {
           path:'trainer',
           element:<Trainer></Trainer>
+        },
+        {
+          path:'class',
+          element:<Class></Class>
+        },
+        {
+          path:'classdetails/:id',
+          element:<ClassDetails></ClassDetails>,
+          loader:async({params}) => await fetch(`http://localhost:5000/entryclass/${params.id}`)
+          // todo :get api from server
         },
         {
           path:'trainerdetails/:id',
