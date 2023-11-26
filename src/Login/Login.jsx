@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import SocialLogin from "../Components/SocialLogin/SocialLogin";
 
 
 
@@ -79,9 +80,8 @@ const Login = () => {
                 <div className="form-control mt-6">
                   <input type="submit" className="btn btn-primary" value='Sign IN'/>
                 </div>
-                <button className="btn btn-primary">LogIn with Google</button>
               </form>
-              
+              <SocialLogin></SocialLogin>
               <p className="text-center pb-4 text-lg">do not have an account <Link to='/signup' className="text-blue-600">Sign Up</Link> </p>
             </div>
           </div>
