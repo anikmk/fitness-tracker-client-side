@@ -2,14 +2,20 @@ import { useForm } from "react-hook-form";
 import Cover from "../Shared/Cover/Cover";
 import { FaArrowTrendUp } from "react-icons/fa6";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 const BeTrainer = () => {
-    const { register, handleSubmit } = useForm();
+    const {user} = useContext(AuthContext);
+    const { register, handleSubmit,reset } = useForm();
     const axiosPublic = useAxiosPublic();
+    const axiosSecure = useAxiosSecure();
     const onSubmit = async(data) => {
         console.log(data)
         // image update in image bb and then get api
@@ -22,17 +28,28 @@ const BeTrainer = () => {
         if(res.data.success){
           // now send to the trainer info to the server with img rl
           const trainerInfo = {
-            name:data.name,
+            trainerName:data.name,
             email:data.email,
             category:data.category,
             age:parseFloat(data.age),
             availableTimeWeek:data.availableTimeWeek,
             availableTimeDay:data.availableTimeDay,
-            image:res.data.data.display_url
+            profileImage:res.data.data.display_url
           }
-          const trainerRes = await axiosPublic.post('/')
+          const trainerRes = await axiosSecure.post('/trainer',trainerInfo);
+          console.log(trainerRes.data)
+          if(trainerRes.data.insertedId){
+            reset();
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: "Your Applyed form submited",
+              showConfirmButton: false,
+              timer: 1500
+            });
+          }
         }
-        console.log(res.data)
+        // console.log(res.data)
       };
     return (
         <div>
@@ -59,6 +76,7 @@ const BeTrainer = () => {
             </label>
             <input
               type="email"
+              defaultValue={user.email}
               {...register("email")}
               placeholder="Enter Email.."
               className="input input-bordered w-full"

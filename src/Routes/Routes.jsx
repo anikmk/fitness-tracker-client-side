@@ -9,6 +9,8 @@ import Trainer from "../Pages/Trainer/Trainer";
 import TrainerDetails from "../Pages/Trainer/TrainerDetails";
 import BeTrainer from "../Pages/Trainer/BeTrainer";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import TrainerBooked from "../Components/TrainerBooked/TrainerBooked";
+import Payment from "../Components/Payment/Payment";
 
 
  export const router = createBrowserRouter([
@@ -34,9 +36,18 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
           element:<TrainerDetails></TrainerDetails>,
           loader:async({params}) => await fetch(`http://localhost:5000/trainer/${params.id}`)
         },
+        // secure path
         {
           path:'betrainer',
           element:<BeTrainer></BeTrainer>
+        },
+        {
+          path:'trainerbooked',
+          element:<TrainerBooked></TrainerBooked>
+        },
+        {
+          path:'payment',
+          element:<Payment></Payment>
         },
         {
           path:'login',

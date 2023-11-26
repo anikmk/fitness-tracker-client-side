@@ -11,6 +11,7 @@ const TrainerDetails = () => {
         <div>
             <Cover coverTitle='Trainer Details' coverDescription='Meet our skilled trainers! With diverse expertise and years of experience, our dedicated team offers tailored guidance and motivation. Personalized sessions cater to your fitness goals, ensuring an empowering journey toward a healthier, fitter you.'></Cover>
             <div className="w-[70%] mx-auto py-14">
+                <Link to='/trainerbooked'>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-14 gap-6">
                    {
                     slot.map(singleSlot=> <div
@@ -26,6 +27,7 @@ const TrainerDetails = () => {
                    }
 
                 </div>
+                </Link>
                 <Link to='/betrainer'>
                 <button className="mt-4 px-6 py-3 bg-[#80f221] text-black rounded-full font-semibold flex items-center text-xl hover:shadow-[#7ff2219a] shadow-xl hover:bg-[#ffffff46] mx-auto"> Know More<FaArrowTrendUp  className="ml-2"/></button>
                 </Link>
