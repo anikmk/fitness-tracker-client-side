@@ -1,12 +1,38 @@
 import { useForm } from "react-hook-form";
 import Cover from "../Shared/Cover/Cover";
 import { FaArrowTrendUp } from "react-icons/fa6";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
+
+const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
+const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 const BeTrainer = () => {
     const { register, handleSubmit } = useForm();
+    const axiosPublic = useAxiosPublic();
     const onSubmit = async(data) => {
         console.log(data)
+        // image update in image bb and then get api
+        const imageFile = {image:data.image[0]}
+        const res = await axiosPublic.post(image_hosting_api, imageFile, {
+          headers:{
+            'content-type': 'multipart/form-data'
+          }
+        });
+        if(res.data.success){
+          // now send to the trainer info to the server with img rl
+          const trainerInfo = {
+            name:data.name,
+            email:data.email,
+            category:data.category,
+            age:parseFloat(data.age),
+            availableTimeWeek:data.availableTimeWeek,
+            availableTimeDay:data.availableTimeDay,
+            image:res.data.data.display_url
+          }
+          const trainerRes = await axiosPublic.post('/')
+        }
+        console.log(res.data)
       };
     return (
         <div>
@@ -81,15 +107,22 @@ const BeTrainer = () => {
                 placeholder="Available Time in a Week"
               ></input>
             </div>
-           <div className="form-control">
+
+            <div className="form-control w-full">
               <label className="label">
-                <span className="label-text">Available Time Day</span>
+                <span className="label-text">available time in a day?</span>
               </label>
-              <input
-              {...register("availableTimeDay")}
-                className="input input-bordered w-full"
-                placeholder="Available Time in a Day"
-              ></input>
+              <select
+                {...register("availableTimeDay")}
+                className="select select-bordered w-full"
+              >
+                <option disabled value='default'>
+                  select Your available time
+                </option>
+                <option value="9-12">9 AM - 12 AM</option>
+                <option value="1-5">1 PM - 5 PM</option>
+                <option value="6-10"> 6 PM - 10 PM </option>
+              </select>
             </div>
             <div className="form-control w-full my-6">
                 <input {...register("image")} type="file" className="file-input w-full mx-w-xs" />

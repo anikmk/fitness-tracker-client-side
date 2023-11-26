@@ -3,11 +3,21 @@
     "trainerName": "John Smith",
     "profileImage": "https://i.ibb.co/hdDbYWb/coach2.jpg",
     "experience": "10+ years",
-    "availableTimeSlot": "9 AM - 12 PM, 3 PM - 7 PM",
     "email": "john@example.com",
     "age": 35,
     "availableTimeWeek": "Monday, Wednesday, Friday",
-    "availableTimeDay": "Morning, Afternoon, Evening"
+    "availableTimeDay": "Morning, Afternoon, Evening",
+    "slot":[
+     { 
+       "availableTime": "9 AM - 10 AM,"
+      },
+     { 
+       "availableTime": "11 AM - 12 AM"
+      },
+     { 
+       "availableTime": "1 AM - 2 AM"
+      }
+    ]
   },
   {
     "trainerName": "Emily Johnson",
@@ -17,7 +27,21 @@
     "email": "emily@example.com",
     "age": 28,
     "availableTimeWeek": "Tuesday, Thursday, Saturday",
-    "availableTimeDay": "Morning, Evening"
+    "availableTimeDay": "Morning, Evening",
+    "slot":[
+      { 
+        "availableTime": "9 AM - 10 AM,"
+       },
+      { 
+        "availableTime": "11 AM - 12 AM"
+       },
+      { 
+        "availableTime": "1 AM - 2 AM"
+       },
+      { 
+        "availableTime": "1 AM - 2 AM"
+       }
+     ]
   },
   {
     "trainerName": "Michael Brown",
@@ -27,7 +51,24 @@
     "email": "michael@example.com",
     "age": 42,
     "availableTimeWeek": "Monday - Saturday",
-    "availableTimeDay": "Morning, Evening"
+    "availableTimeDay": "Morning, Evening",
+    "slot":[
+      { 
+        "availableTime": "9 AM - 10 AM,"
+       },
+      { 
+        "availableTime": "11 AM - 12 AM"
+       },
+      { 
+        "availableTime": "1 AM - 2 AM"
+       },
+      { 
+        "availableTime": "1 AM - 2 AM"
+       },
+      { 
+        "availableTime": "1 AM - 2 AM"
+       }
+     ]
   },
   {
     "trainerName": "Sophia Garcia",
@@ -37,7 +78,15 @@
     "email": "sophia@example.com",
     "age": 30,
     "availableTimeWeek": "Monday, Wednesday, Friday, Sunday",
-    "availableTimeDay": "Morning, Afternoon"
+    "availableTimeDay": "Morning, Afternoon",
+    "slot":[
+      { 
+        "availableTime": "9 AM - 10 AM,"
+       },
+      { 
+        "availableTime": "11 AM - 12 AM"
+       }
+     ]
   },
   {
     "trainerName": "David Martinez",
@@ -47,16 +96,50 @@
     "email": "david@example.com",
     "age": 33,
     "availableTimeWeek": "Tuesday, Thursday, Saturday",
-    "availableTimeDay": "Morning, Evening"
+    "availableTimeDay": "Morning, Evening",
+    "slot":[
+      { 
+        "availableTime": "9 AM - 10 AM,"
+       },
+      { 
+        "availableTime": "11 AM - 12 AM"
+       },
+      { 
+        "availableTime": "1 AM - 2 AM"
+       },
+      { 
+        "availableTime": "1 AM - 2 AM"
+       },
+      { 
+        "availableTime": "1 AM - 2 AM"
+       },
+      { 
+        "availableTime": "1 AM - 2 AM"
+       }
+     ]
   },
   {
     "trainerName": "Olivia Wilson",
     "profileImage": "https://i.ibb.co/Lzbw9tF/trainer4.jpg",
     "experience": "3 years",
-    "availableTimeSlot": "6 AM - 9 AM, 5 PM - 8 PM",
+    "availableTimeSlot": "6-9",
     "email": "olivia@example.com",
     "age": 29,
     "availableTimeWeek": "Monday - Saturday",
-    "availableTimeDay": "Morning, Evening"
+    "availableTimeDay": "Morning, Evening",
+    "slot":[
+      { 
+        "availableTime": "9 AM - 10 AM,"
+       },
+      { 
+        "availableTime": "11 AM - 12 AM"
+       },
+      { 
+        "availableTime": "1 AM - 2 AM"
+       },
+      { 
+        "availableTime": "1 AM - 2 AM"
+       }
+     ]
   }
 ]

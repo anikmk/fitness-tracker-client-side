@@ -1,8 +1,17 @@
 import { Helmet } from "react-helmet-async";
 import Cover from "../Shared/Cover/Cover";
-import coverImg from '../../assets/gallery/cover1.jpg'
+import coverImg from '../../assets/gallery/cover1.jpg';
+import { useInfiniteQuery } from "@tanstack/react-query";
 
+const getArticles = async ({pageParam = 0}) => {
+    const res = await fetch(`http://localhost:5000/trainer&offset=${pageParam}`);
+    const data = res.json();
+    return {...data, prevOffset: pageParam}
+
+}
 const Gallery = () => {
+    // getArticles()
+    const {} = useInfiniteQuery()
     return (
         <div>
             <Helmet>
