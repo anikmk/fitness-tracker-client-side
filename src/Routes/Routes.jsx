@@ -19,6 +19,7 @@ import Class from "../Pages/Class/Class";
 import ClassDetails from "../Pages/Class/ClassDetails";
 import AddNewForum from "../Pages/Dashboard/AddNewForum/AddNewForum";
 import Community from "../Pages/Community/Community";
+import BlogDetails from "../Pages/Home/Blog/BlogDetails";
 
 
 
@@ -58,6 +59,10 @@ import Community from "../Pages/Community/Community";
           path:'trainerdetails/:id',
           element:<TrainerDetails></TrainerDetails>,
           loader:async({params}) => await fetch(`http://localhost:5000/trainer/${params.id}`)
+        },
+        {
+          path:'blogdetails',
+          element:<BlogDetails></BlogDetails>
         },
         // secure path
         {

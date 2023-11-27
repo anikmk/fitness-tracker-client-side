@@ -11,7 +11,8 @@ import useReview from "../../../hooks/useReview";
 const Testimonials = () => {
   const [reviews] = useReview([]);
   return (
-    <div className="py-20 md:mx-20">
+    <div className="bg-green-100">
+      <div className="py-20 md:mx-20 ">
       <SectionTitle
         heading="Whats Our Client Say"
         subHeading="Real Stories, Real Transformations"
@@ -28,6 +29,7 @@ const Testimonials = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+    </div>
     </div>
   );
 };

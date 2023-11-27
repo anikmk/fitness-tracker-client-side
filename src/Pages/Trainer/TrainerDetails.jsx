@@ -29,7 +29,7 @@ const TrainerDetails = () => {
                 </div>
                 </Link>
                 <Link to='/betrainer'>
-                <button className="mt-4 px-6 py-3 bg-[#80f221] text-black rounded-full font-semibold flex items-center text-xl hover:shadow-[#7ff2219a] shadow-xl hover:bg-[#ffffff46] mx-auto"> Know More<FaArrowTrendUp  className="ml-2"/></button>
+                <button className="mt-4 px-6 py-3 bg-[#80f221] text-black rounded-full font-semibold flex items-center text-xl hover:shadow-[#7ff2219a] shadow-xl hover:bg-[#ffffff46] mx-auto"> Become a Trainer<FaArrowTrendUp  className="ml-2"/></button>
                 </Link>
             </div>
            

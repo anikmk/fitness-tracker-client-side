@@ -5,13 +5,27 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 
 const getArticles = async ({pageParam = 0}) => {
     const res = await fetch(`http://localhost:5000/trainer&offset=${pageParam}`);
-    const data = res.json();
+    const data = await res.json();
     return {...data, prevOffset: pageParam}
 
 }
 const Gallery = () => {
     // getArticles()
-    const {} = useInfiniteQuery()
+    const {data,fetchNextPage,hasNextPage} = useInfiniteQuery({
+        queryKey: ['articles'],
+        queryFn:getArticles,
+        getNextPageParam: (lastPage) => {
+            if(lastPage.prevOffset + 10 > lastPage.articlesCount){
+                return false;
+            }
+            return lastPage.prevOffset + 10;
+        }
+    })
+   
+    const articles = data?.pages.reduce((acc,page)=>{
+        return [...acc,...page.articles]
+    },[])
+    console.log(articles)
     return (
         <div>
             <Helmet>
