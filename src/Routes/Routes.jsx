@@ -17,6 +17,7 @@ import AllTrainers from "../Pages/Dashboard/AllTrainers/AllTrainers";
 import AddNewClass from "../Pages/Dashboard/AddNewClass/AddNewClass";
 import Class from "../Pages/Class/Class";
 import ClassDetails from "../Pages/Class/ClassDetails";
+import AddNewForum from "../Pages/Dashboard/AddNewForum/AddNewForum";
 
 
 
@@ -95,6 +96,10 @@ import ClassDetails from "../Pages/Class/ClassDetails";
         {
           path:'addnewclass',
           element:<AddNewClass></AddNewClass>
+        },
+        {
+          path:'addnewforum',
+          element:<AddNewForum></AddNewForum>
         }
       ]
     }
