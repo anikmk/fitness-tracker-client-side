@@ -6,6 +6,7 @@ import { useState } from "react";
 import { FaArrowTrendUp, FaFacebook, FaLinkedinIn } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { AiFillInstagram, AiFillTwitterCircle } from "react-icons/ai";
+import ClassesSchedule from "./ClassesSchedule";
 
 const Class = () => {
     const axiosPublic = useAxiosPublic();
@@ -19,13 +20,21 @@ const Class = () => {
         <div>
             <Cover img={clasesImg} coverTitle='Show All Clases' coverDescription='Say Someting About Class'></Cover>
             <div className="py-14">
+              <SectionTitle heading='Weekly Schedule' subHeading='Explore Our Weekly Schedule: Our diverse lineup offers classes for every fitness level and interest. With flexible timings throughout the week, discover an array of sessions tailored to energize, challenge, and enhance your wellness journey.'>
+              </SectionTitle>
+              <div>
+              <ClassesSchedule></ClassesSchedule>
+
+              </div>
+            </div>
+            <div className="py-14">
                 <SectionTitle heading='All Clases' subHeading='Explore our fitness classes! From high-energy workouts to mindful practices, our diverse classes cater to all levels. Join our community for engaging sessions designed to boost your fitness and well-being.'></SectionTitle>
             </div>
             <div className="w-[80%] mx-auto pb-14">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {
                 clases.map(singleClass=><div
-                key={singleClass._id} className="card bg-base-100 hover:shadow-[#7ff2219a] shadow-xl rounded-md hover:bg-[#7ff22146] text-center">
+                key={singleClass._id} className="card bg-base-200 hover:shadow-[#7ff2219a] shadow-xl rounded-md hover:bg-[#7ff22146] text-center">
                 <figure className="px-10 pt-6">
                   <img
                     src={singleClass.profileImage}

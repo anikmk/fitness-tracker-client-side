@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Cover from "../Shared/Cover/Cover";
 import SectionTitle from "../../Components/SectionTitle/SectionTitle";
 import { FaArrowTrendUp, FaCircleArrowRight } from "react-icons/fa6";
@@ -18,8 +18,8 @@ const ClassDetails = () => {
 
            <div className="bg-white py-5 mb-8">
             <div className="w-[80%] mx-auto">
-                <div className="flex items-center gap-11">
-                    <div className="w-[50%]">
+                <div className="grid lg:grid-cols-2 items-center gap-11">
+                    <div className="">
                     <h3 className="text-3xl pb-3 mb-3 font-bold border-b-2 border-[#80f221]">Decade of Experience</h3>
                     <p className="mb-4">{`"${trainerName}: 10+ years of expertise in sculpting bodies and transforming lives. Personalized workouts, technique finesse, and a holistic approach for lasting fitness success."`}</p>
                     <ul className="ml-5 mb-8">
@@ -45,7 +45,9 @@ const ClassDetails = () => {
                         </li>
                         
                     </ul>
-                    <button className="mt-4 px-6 py-3 bg-[#80f221] text-black rounded-full font-semibold flex items-center text-xl hover:shadow-[#7ff2219a] shadow-xl hover:bg-[#7ff22146]"> Join Now <FaArrowTrendUp  className="ml-2"/></button>
+                    <Link to='/trainer'>
+                        <button className="mt-4 px-6 py-3 bg-[#80f221] text-black rounded-full font-semibold flex items-center text-xl hover:shadow-[#7ff2219a] shadow-xl hover:bg-[#7ff22146]"> Join Now <FaArrowTrendUp  className="ml-2"/></button>
+                    </Link>
                     </div>
                     <div className="w-50% overflow-hidden">
                         <img src={profileImage} className="w-[70%] mx-auto rounded-b-full shadow-2xl cursor-zoom-in object-cover transition-transform transform-gpu hover:scale-110" alt="" />
