@@ -18,6 +18,7 @@ import AddNewClass from "../Pages/Dashboard/AddNewClass/AddNewClass";
 import Class from "../Pages/Class/Class";
 import ClassDetails from "../Pages/Class/ClassDetails";
 import AddNewForum from "../Pages/Dashboard/AddNewForum/AddNewForum";
+import Community from "../Pages/Community/Community";
 
 
 
@@ -42,6 +43,10 @@ import AddNewForum from "../Pages/Dashboard/AddNewForum/AddNewForum";
         {
           path:'class',
           element:<Class></Class>
+        },
+        {
+          path:'community',
+          element:<Community></Community>
         },
         {
           path:'classdetails/:id',

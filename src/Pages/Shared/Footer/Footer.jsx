@@ -1,14 +1,14 @@
-
+import { FaCopyright } from "react-icons/fa";
+import logo from '../../../assets/footer/logo.png'
 
 const Footer = () => {
     return (
         <footer className="footer p-10 bg-base-300 text-base-content">
   <nav>
-    <header className="footer-title">Services</header> 
-    <a className="link link-hover">Branding</a>
-    <a className="link link-hover">Design</a>
-    <a className="link link-hover">Marketing</a>
-    <a className="link link-hover">Advertisement</a>
+    <header className="footer-title flex items-center">
+      <FaCopyright></FaCopyright> <p> copy right by Anik mollik</p>
+      </header> 
+      <img src={logo} alt="" />
   </nav> 
   <nav>
     <header className="footer-title">Company</header> 

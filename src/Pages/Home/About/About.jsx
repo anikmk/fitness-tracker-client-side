@@ -7,8 +7,8 @@ const About = () => {
         <div className="bg-white py-12">
             <div className="w-[80%] mx-auto">
                 <SectionTitle heading='About Us'></SectionTitle>
-                <div className="flex">
-                    <div className="w-[50%]">
+                <div className="grid grid-cols-1 lg:grid-cols-2">
+                    <div className="">
                     <h3 className="text-3xl font-semibold mb-3">Body & mind</h3>
                     <p className="mb-4">Pilates is a low-impact, resistance-based fitness program. Pilates can be modified for any fitness level from patients requiring rehabilitation-based fitness to elite athletes.</p>
                     <ul className="ml-5 mb-8">
@@ -34,9 +34,9 @@ const About = () => {
                         </li>
                         
                     </ul>
-                    <button className="mt-4 px-6 py-3 bg-[#80f221] text-black rounded-full font-semibold flex items-center text-xl hover:shadow-[#7ff2219a] shadow-xl hover:bg-[#7ff22146]"> Start Today <FaArrowTrendUp  className="ml-2"/></button>
+                    <button className="mt-4 px-6 mb-5 md:mb-0 py-3 bg-[#80f221] text-black rounded-full font-semibold flex items-center text-xl hover:shadow-[#7ff2219a] shadow-xl hover:bg-[#7ff22146]"> Start Today <FaArrowTrendUp  className="ml-2"/></button>
                     </div>
-                    <div className="w-50% relative">
+                    <div className="relative">
                         <img width={500} src={aboutimage1} className="" alt="" />
                         <div className="absolute top-20 left-20 text-white">
                         <h3>Our Story</h3>

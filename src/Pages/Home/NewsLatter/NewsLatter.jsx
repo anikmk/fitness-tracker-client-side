@@ -29,10 +29,10 @@ const NewsLatter = () => {
     <div className="bg-base-300 py-12 border-b-2 border-[#80f221]">
       <div className="w-[80%] mx-auto">
         <div className="md:flex items-center">
-          <div className="w-[50%] lg:mr-12">
+          <div className="md:w-[50%] w-[80%] lg:mr-12">
             <img src={newslatter} alt="" />
           </div>
-          <div className="w-[50%] flex flex-col items-center">
+          <div className="md:w-[50%] w-[90%] flex flex-col items-center">
             <SectionTitle
               heading="Newslatter"
               subHeading="subscrive to our newslatter and stay update"

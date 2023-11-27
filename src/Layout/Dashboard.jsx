@@ -3,12 +3,22 @@ import { FaAd, FaCalendar, FaEnvelope, FaHome, FaList, FaSearch, FaShoppingCart,
 import { SiManageiq } from "react-icons/si";
 import { MdOutlineClass } from "react-icons/md";
 import { GiMoneyStack } from "react-icons/gi";
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 const Dashboard = () => {
-    const isAdmin = false;
-    const isTrainer = true;
+    const {user} = useContext(AuthContext);
+
+    const isAdmin = true;
+    const isTrainer = false;
     return (
         <div className="flex">
             <div className="w-64 h-screen bg-orange-400">
+            <div className="avatar  mr-4">
+              <div className=" w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                
+                <img src={user?.photoURL} />
+              </div>
+            </div>
                 <ul className="menu text-base font-semibold">
                     {
                         isAdmin ? <>
