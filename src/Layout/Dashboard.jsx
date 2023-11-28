@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaAd, FaCalendar, FaEnvelope, FaHome, FaList, FaSearch, FaShoppingCart, FaUserCog, FaUserGraduate, FaUsers, FaWpforms } from "react-icons/fa";
+import {  FaCalendar, FaEnvelope, FaHome, FaList, FaSearch, FaShoppingCart, FaUserCog, FaUserGraduate, FaUsers, FaWpforms } from "react-icons/fa";
 import { SiManageiq } from "react-icons/si";
 import { MdOutlineClass } from "react-icons/md";
 import { GiMoneyStack } from "react-icons/gi";
@@ -12,7 +12,7 @@ import useCoach from "../hooks/useCoach";
 const Dashboard = () => {
     const { user } = useContext(AuthContext);
   const [isAdmin, isAdminLoading] = useAdmin();
-  const [isCoachLoading,isCoach] = useCoach();
+  const [ isCoach, isCoachLoading] = useCoach();
   
   if (isAdminLoading) {
     return <div className="flex justify-center loading-spinner">Loading...</div>;
@@ -24,11 +24,14 @@ const Dashboard = () => {
     return (
         <div className="flex">
             <div className="w-64 h-screen bg-orange-400">
+            <div className="text-center py-5">
             <div className="avatar  mr-4">
-              <div className=" w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                
+              <div className=" w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">              
                 <img src={user?.photoURL} />
               </div>
+            </div>
+            <h2 className="pt-2 font-semibold"> {user?.displayName} </h2>
+            <p> {user?.email} </p>
             </div>
                 <ul className="menu text-base font-semibold">
                     {
@@ -94,27 +97,17 @@ const Dashboard = () => {
                         <>
                         <li>
                     <NavLink to='/dashboard/userHome'> <FaHome></FaHome>
-                    User Home
+                    Activity Log
                     </NavLink>
                     </li>
                     <li>
                     <NavLink to='/dashboard/reservation'> <FaCalendar></FaCalendar>
-                    Reservation
+                    Profile Settings
                     </NavLink>
                     </li>
                     <li>
                     <NavLink to='/dashboard/'> <FaShoppingCart></FaShoppingCart>
-                    My Cart 
-                    </NavLink>
-                    </li>
-                    <li>
-                    <NavLink to='/dashboard/review'> <FaAd></FaAd>
-                    Review
-                    </NavLink>
-                    </li>
-                    <li>
-                    <NavLink to='/dashboard/bookings'> <FaAd></FaAd>
-                    Bookings
+                    Recommended Classes
                     </NavLink>
                     </li>
                         </>

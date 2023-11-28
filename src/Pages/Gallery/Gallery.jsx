@@ -4,7 +4,7 @@ import coverImg from '../../assets/gallery/cover1.jpg';
 import { useInfiniteQuery } from "@tanstack/react-query";
 
 const getArticles = async ({pageParam = 0}) => {
-    const res = await fetch(`http://localhost:5000/trainer&offset=${pageParam}`);
+    const res = await fetch(`http://localhost:5000/trainer?offset=${pageParam}`);
     const data = await res.json();
     return {...data, prevOffset: pageParam}
 
@@ -21,9 +21,9 @@ const Gallery = () => {
             return lastPage.prevOffset + 10;
         }
     })
-   
+   console.log(data)
     const articles = data?.pages.reduce((acc,page)=>{
-        return [...acc,...page.articles]
+        return [...acc,...page?.articles || []]
     },[])
     console.log(articles)
     return (

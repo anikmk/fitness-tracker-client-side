@@ -21,6 +21,7 @@ import AddNewForum from "../Pages/Dashboard/AddNewForum/AddNewForum";
 import Community from "../Pages/Community/Community";
 import BlogDetails from "../Pages/Home/Blog/BlogDetails";
 import AllUsers from "../Pages/Dashboard/Allusers/AllUsers";
+import AppliendTrainers from "../Pages/Dashboard/AppliedTrainers/AppliendTrainers";
 
 
 
@@ -106,6 +107,10 @@ import AllUsers from "../Pages/Dashboard/Allusers/AllUsers";
         {
           path:'alltrainers',
           element:<AllTrainers></AllTrainers>
+        },
+        {
+          path:'appliedtrainer',
+          element:<AppliendTrainers></AppliendTrainers>
         },
         // admin trainer
         {
