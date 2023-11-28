@@ -21,6 +21,15 @@ const Login = () => {
         const password = form.password.value;
         const userInfo = {email,password}
         console.log(userInfo)
+        if(password.length <  6){
+          Swal.fire({
+            position: "top-end",
+            icon: "warning",
+            title: "password must be 6 chr",
+            showConfirmButton: false,
+            timer: 1500
+          });
+        }
         loginUser(email,password)
         .then(result=>{
           console.log(result.user)

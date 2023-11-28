@@ -23,7 +23,7 @@ const Dashboard = () => {
 
         
     return (
-        <div className="flex">
+        <div className=" lg:flex">
             <div className="w-64 h-screen bg-orange-400">
             <div className="text-center py-5">
             <div className="avatar  mr-4">
