@@ -35,7 +35,7 @@ const BeTrainer = () => {
             availableTimeWeek:data.availableTimeWeek,
             availableTimeDay:data.availableTimeDay,
             profileImage:res.data.data.display_url,
-            status:'pendig',
+            status:'pending',
             joiningDate: new Date().toDateString()
           }
           const trainerRes = await axiosSecure.post('/trainer',trainerInfo);

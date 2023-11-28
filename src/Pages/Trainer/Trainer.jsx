@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 
 const Trainer = () => {
     const [trainer] = useTrainer([]);
+    const trainersToShow = trainer.slice(0, 6);
     return (
         <div>
             <Cover img={alltrainers} coverTitle='all trainers' coverDescription='Meet our dedicated trainers! Our expert team combines passion and expertise to guide you on your fitness journey. With tailored programs, personalized attention, and proven results, our trainers are committed to empowering you to reach your fitness goals. Experience top-notch coaching and motivation for a healthier, stronger you!'></Cover>
@@ -18,7 +19,7 @@ const Trainer = () => {
             <div className="w-[80%] mx-auto pb-14">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {
-                trainer.map(singleTrainer=><div
+                trainersToShow.map(singleTrainer=><div
                 key={singleTrainer._id} className="card bg-base-100 hover:shadow-[#7ff2219a] shadow-xl rounded-md hover:bg-[#7ff22146]">
                 <figure className="px-10 pt-6">
                   <img
