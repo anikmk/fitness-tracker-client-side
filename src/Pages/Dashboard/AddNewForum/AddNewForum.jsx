@@ -11,8 +11,8 @@ const AddNewForum = () => {
         const addFormInfo = {
             question:data.question,
             answer:data.answer,
-            like:1,
-            dislike:1
+            like:0,
+            dislike:0
         }
         console.log(addFormInfo)
         const trainerRes = await axiosSecure.post('/entryforum',addFormInfo);

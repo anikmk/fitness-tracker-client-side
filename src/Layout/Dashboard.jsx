@@ -3,13 +3,24 @@ import { FaAd, FaCalendar, FaEnvelope, FaHome, FaList, FaSearch, FaShoppingCart,
 import { SiManageiq } from "react-icons/si";
 import { MdOutlineClass } from "react-icons/md";
 import { GiMoneyStack } from "react-icons/gi";
-import { useContext } from "react";
+import { useContext, } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-const Dashboard = () => {
-    const {user} = useContext(AuthContext);
 
-    const isAdmin = true;
-    const isTrainer = false;
+import useAdmin from "../hooks/useAdmin";
+import useCoach from "../hooks/useCoach";
+
+const Dashboard = () => {
+    const { user } = useContext(AuthContext);
+  const [isAdmin, isAdminLoading] = useAdmin();
+  const [isCoachLoading,isCoach] = useCoach();
+  
+  if (isAdminLoading) {
+    return <div className="flex justify-center loading-spinner">Loading...</div>;
+}
+  if (isCoachLoading) {
+    return <div className="flex justify-center loading-spinner">Loading...</div>;
+}
+
     return (
         <div className="flex">
             <div className="w-64 h-screen bg-orange-400">
@@ -22,6 +33,12 @@ const Dashboard = () => {
                 <ul className="menu text-base font-semibold">
                     {
                         isAdmin ? <>
+                        <li>
+                    <NavLink to='/dashboard/users'> 
+                    <FaUsers />
+                    All Users
+                    </NavLink>
+                    </li>
                         <li>
                     <NavLink to='/dashboard/subscribers'> 
                     <FaUsers />
@@ -50,7 +67,7 @@ const Dashboard = () => {
                     </li>
                         </> : 
                         // Admin Trainer
-                        isTrainer ? 
+                        isCoach ? 
                         <>
                         <li>
                         <NavLink to='/dashboard/manageslotes'> <SiManageiq />

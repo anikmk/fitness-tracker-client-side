@@ -20,6 +20,7 @@ import ClassDetails from "../Pages/Class/ClassDetails";
 import AddNewForum from "../Pages/Dashboard/AddNewForum/AddNewForum";
 import Community from "../Pages/Community/Community";
 import BlogDetails from "../Pages/Home/Blog/BlogDetails";
+import AllUsers from "../Pages/Dashboard/Allusers/AllUsers";
 
 
 
@@ -94,6 +95,10 @@ import BlogDetails from "../Pages/Home/Blog/BlogDetails";
       element:<PrivetRouter><Dashboard></Dashboard></PrivetRouter>,
       children:[
         // admin routes
+        {
+          path:'users',
+          element:<AllUsers></AllUsers>
+        },
         {
           path:'subscribers',
           element:<PrivetRouter><AllSubscriber></AllSubscriber></PrivetRouter>

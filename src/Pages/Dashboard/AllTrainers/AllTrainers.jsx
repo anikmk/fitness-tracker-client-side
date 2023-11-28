@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { Link } from "react-router-dom";
 
 
 const AllTrainers = () => {
@@ -55,7 +56,9 @@ const AllTrainers = () => {
             </td>
             <td> {trainer.email} </td>
             <th>
+            <Link to='/payment'>
             <button className="mt-4 px-3 py-2 bg-[#80f221] text-black rounded font-medium text-lg hover:shadow-[#7ff2219a] shadow-xl hover:bg-[#ffffff46]"> Pay</button>
+            </Link>
             </th>
           </tr>)
       }

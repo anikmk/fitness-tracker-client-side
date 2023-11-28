@@ -3,6 +3,7 @@ import communityImg from '../../assets/community/community.jpg'
 import SectionTitle from "../../Components/SectionTitle/SectionTitle";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { useState } from "react";
+import { AiTwotoneDislike, AiTwotoneLike } from "react-icons/ai";
 
 const Community = () => {
     const axiosPublic = useAxiosPublic();
@@ -11,6 +12,24 @@ const Community = () => {
     .then(res=>{
         setCommunites(res.data)
     })
+    const handleLike = (id,prevLike) => {
+            const info = {
+                like:prevLike
+            }
+        axiosPublic.patch(`/entryforum/${id}`,info)
+        .then(res=>{
+            console.log(res.data)
+        })
+    }
+    const handleDisLike = (id,prevDislike) => {
+            const info = {
+                dislike:prevDislike
+            }
+        axiosPublic.patch(`/entryforum/${id}`,info)
+        .then(res=>{
+            console.log(res.data)
+        })
+    }
     return (
         <div>
             <Cover img={communityImg} coverTitle='Vibrant Community' coverDescription='Dive into Thought-provoking Posts: Explore a diverse range of discussions, from queries to solutions, fostering an inclusive space for knowledge exchange and interactive engagement within our community forum.'></Cover>
@@ -24,9 +43,13 @@ const Community = () => {
                     <h2> <span className="text-xl font-bold">Question: </span> {community.question} </h2>
                     <p> <span className="text-xl font-bold">Answer: </span> {community.answer} </p>
                     <div className="flex justify-between">
-                    <button className="mt-5 px-5 py-3 bg-[#80f221] text-black rounded-full font-semibold text-lg hover:shadow-[#7ff2219a] shadow-xl hover:bg-[#ffffff46]">Like</button>
+                    <button onClick={()=>handleLike(community._id,community.like)} className="mt-5 bg-[#80f221] text-black rounded-full font-semibold text-2xl hover:shadow-[#7ff2219a] shadow-xl hover:bg-[#ffffff46]">
+                        <div className="flex">
+                        <AiTwotoneLike /><span> {community.like} </span>
+                        </div>
+                    </button>
 
-                    <button className="mt-5 px-2 py-2 bg-[#80f221] text-black rounded-full font-semibold text-lg hover:shadow-[#7ff2219a] shadow-xl hover:bg-[#ffffff46]">DisLike</button>
+                    <button onClick={()=>handleDisLike(community._id,community.dislike)} className="mt-5 px-2 py-2 bg-[#80f221] text-black rounded-full font-semibold text-2xl hover:shadow-[#7ff2219a] shadow-xl hover:bg-[#ffffff46]"><AiTwotoneDislike /> <span> {community.dislike} </span> </button>
                     </div>
                 </div>)
                 }
