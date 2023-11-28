@@ -1,5 +1,6 @@
 
 const AppliedTrainersTableRow = () => {
+    
     return (
         <div>
             
