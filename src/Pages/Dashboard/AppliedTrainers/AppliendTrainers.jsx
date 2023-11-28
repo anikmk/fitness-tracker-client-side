@@ -8,6 +8,7 @@ const AppliendTrainers = () => {
     const axiosSecure = useAxiosSecure();
     console.log(applied)
     const handleConfirm = (id) => {
+        
         axiosSecure.put(`/trainers/pending/${id}`,{status:'trainer'})
         .then(res=>{
             if(res.data.updatedCount > 0){

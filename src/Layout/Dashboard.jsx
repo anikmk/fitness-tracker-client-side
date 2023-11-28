@@ -21,6 +21,7 @@ const Dashboard = () => {
     return <div className="flex justify-center loading-spinner">Loading...</div>;
 }
 
+        
     return (
         <div className="flex">
             <div className="w-64 h-screen bg-orange-400">
