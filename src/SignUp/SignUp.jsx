@@ -50,7 +50,13 @@ const SignUp = () => {
       })
     })
     .catch(error=>{
-      console.log(error.message)
+      Swal.fire({
+        position: "top-end",
+        icon: "warning",
+        title: `${error.message}`,
+        showConfirmButton: false,
+        timer: 2000
+      });
     })
 }
 

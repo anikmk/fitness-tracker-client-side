@@ -43,7 +43,13 @@ const Login = () => {
           navigate(from,{replace:true});
         })
         .catch(error=>{
-          console.log(error.message)
+          Swal.fire({
+            position: "top-end",
+            icon: "warning",
+            title: `${error.message} Check your Pass or email`,
+            showConfirmButton: false,
+            timer: 2000
+          });
         })
     }
     return (

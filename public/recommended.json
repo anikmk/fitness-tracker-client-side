@@ -1,0 +1,51 @@
+[
+    {
+      "classId": 1,
+      "className": "HIIT Workout",
+      "instructor": "John Doe",
+      "description": "High-Intensity Interval Training for maximum calorie burn.",
+      "schedule": "Mon, Wed, Fri - 8 AM to 9 AM",
+      "location": "Fitness Center A"
+    },
+    {
+      "classId": 2,
+      "className": "Yoga Flow",
+      "instructor": "Emily Smith",
+      "description": "Mindful yoga practice focusing on fluid movements and breath.",
+      "schedule": "Tue, Thu - 6 PM to 7 PM",
+      "location": "Yoga Studio B"
+    },
+    {
+      "classId": 3,
+      "className": "Strength Training",
+      "instructor": "Mike Johnson",
+      "description": "Build muscle and increase strength using weights and resistance.",
+      "schedule": "Mon, Wed, Fri - 5 PM to 6 PM",
+      "location": "Strength Zone C"
+    },
+    {
+      "classId": 4,
+      "className": "Zumba Fitness",
+      "instructor": "Sophia Garcia",
+      "description": "Dance-based workout with energetic Latin music for fun cardio.",
+      "schedule": "Tue, Thu - 7 PM to 8 PM",
+      "location": "Dance Studio D"
+    },
+    {
+      "classId": 5,
+      "className": "Pilates Core",
+      "instructor": "David Martinez",
+      "description": "Strengthen and tone your core muscles through Pilates exercises.",
+      "schedule": "Wed, Sat - 9 AM to 10 AM",
+      "location": "Pilates Studio E"
+    },
+    {
+      "classId": 6,
+      "className": "Cycling Spin",
+      "instructor": "Olivia Wilson",
+      "description": "High-energy indoor cycling for endurance and cardiovascular fitness.",
+      "schedule": "Thu, Sun - 8 AM to 9 AM",
+      "location": "Cycling Studio F"
+    }
+  ]
+  

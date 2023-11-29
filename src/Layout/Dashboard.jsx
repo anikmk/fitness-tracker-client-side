@@ -1,13 +1,15 @@
 import { NavLink, Outlet } from "react-router-dom";
-import {  FaCalendar, FaEnvelope, FaHome, FaList, FaSearch, FaShoppingCart, FaUserCog, FaUserGraduate, FaUsers, FaWpforms } from "react-icons/fa";
+import { FaEnvelope, FaHome, FaList, FaSearch, FaUserCog, FaUserGraduate, FaUsers, FaWpforms } from "react-icons/fa";
+import { IoMdSettings } from "react-icons/io";
 import { SiManageiq } from "react-icons/si";
-import { MdOutlineClass } from "react-icons/md";
+import { MdLocalActivity, MdOutlineClass } from "react-icons/md";
 import { GiMoneyStack } from "react-icons/gi";
 import { useContext, } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 
 import useAdmin from "../hooks/useAdmin";
 import useCoach from "../hooks/useCoach";
+import { FaCalendarPlus } from "react-icons/fa6";
 
 const Dashboard = () => {
     const { user } = useContext(AuthContext);
@@ -97,17 +99,18 @@ const Dashboard = () => {
                         :
                         <>
                         <li>
-                    <NavLink to='/dashboard/userHome'> <FaHome></FaHome>
+                    <NavLink to='/dashboard/activitylog'> <MdLocalActivity />
                     Activity Log
                     </NavLink>
                     </li>
                     <li>
-                    <NavLink to='/dashboard/reservation'> <FaCalendar></FaCalendar>
+                    <NavLink to='/dashboard/memberprofile'> <IoMdSettings />
                     Profile Settings
                     </NavLink>
                     </li>
                     <li>
-                    <NavLink to='/dashboard/'> <FaShoppingCart></FaShoppingCart>
+                    <NavLink to='/dashboard/recommended'> 
+                    <FaCalendarPlus />
                     Recommended Classes
                     </NavLink>
                     </li>

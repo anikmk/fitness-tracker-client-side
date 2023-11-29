@@ -22,6 +22,7 @@ import Community from "../Pages/Community/Community";
 import BlogDetails from "../Pages/Home/Blog/BlogDetails";
 import AllUsers from "../Pages/Dashboard/Allusers/AllUsers";
 import AppliendTrainers from "../Pages/Dashboard/AppliedTrainers/AppliendTrainers";
+import Recommended from "../Pages/Dashboard/MamberDashboard/Recommended/Recommended";
 
 
 
@@ -37,7 +38,7 @@ import AppliendTrainers from "../Pages/Dashboard/AppliedTrainers/AppliendTrainer
         },
         {
           path:'gallery',
-          element:<PrivetRouter><Gallery></Gallery></PrivetRouter>
+          element:<Gallery></Gallery>
         },
         {
           path:'trainer',
@@ -53,13 +54,13 @@ import AppliendTrainers from "../Pages/Dashboard/AppliedTrainers/AppliendTrainer
         },
         {
           path:'classdetails/:id',
-          element:<ClassDetails></ClassDetails>,
+          element:<PrivetRouter><ClassDetails></ClassDetails></PrivetRouter>,
           loader:async({params}) => await fetch(`http://localhost:5000/entryclass/${params.id}`)
           // todo :get api from server
         },
         {
           path:'trainerdetails/:id',
-          element:<TrainerDetails></TrainerDetails>,
+          element:<PrivetRouter><TrainerDetails></TrainerDetails></PrivetRouter>,
           loader:async({params}) => await fetch(`http://localhost:5000/trainer/${params.id}`)
         },
         {
@@ -69,11 +70,11 @@ import AppliendTrainers from "../Pages/Dashboard/AppliedTrainers/AppliendTrainer
         // secure path
         {
           path:'betrainer',
-          element:<BeTrainer></BeTrainer>
+          element:<PrivetRouter><BeTrainer></BeTrainer></PrivetRouter>
         },
         {
           path:'trainerbooked',
-          element:<TrainerBooked></TrainerBooked>
+          element:<PrivetRouter><TrainerBooked></TrainerBooked></PrivetRouter>
         },
         {
           path:'payment',
@@ -120,6 +121,11 @@ import AppliendTrainers from "../Pages/Dashboard/AppliedTrainers/AppliendTrainer
         {
           path:'addnewforum',
           element:<AddNewForum></AddNewForum>
+        },
+        // normal user
+        {
+          path:'recommended',
+          element:<Recommended></Recommended>
         }
       ]
     }
