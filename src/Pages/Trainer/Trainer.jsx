@@ -5,12 +5,16 @@ import { FaArrowTrendUp, FaFacebook, FaLinkedinIn } from "react-icons/fa6";
 import { AiFillInstagram, AiFillTwitterCircle } from "react-icons/ai";
 import useTrainer from "../../hooks/useTrainer";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Trainer = () => {
     const [trainer] = useTrainer([]);
     const trainersToShow = trainer.slice(0, 6);
     return (
         <div>
+           <Helmet>
+                <title>Fitness Tracker | Trainers</title>
+            </Helmet>
             <Cover img={alltrainers} coverTitle='all trainers' coverDescription='Meet our dedicated trainers! Our expert team combines passion and expertise to guide you on your fitness journey. With tailored programs, personalized attention, and proven results, our trainers are committed to empowering you to reach your fitness goals. Experience top-notch coaching and motivation for a healthier, stronger you!'></Cover>
             <div className="py-14">
             <SectionTitle heading='Our Traines' subHeading='Expert trainers dedicated to your success. Personalized guidance, tailored workouts, and unwavering support for your fitness goals. Experience transformational coaching and a vibrant fitness community. Join us for a journey toward better health and wellness!'></SectionTitle>

@@ -7,6 +7,7 @@ import { FaArrowTrendUp, FaFacebook, FaLinkedinIn } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { AiFillInstagram, AiFillTwitterCircle } from "react-icons/ai";
 import ClassesSchedule from "./ClassesSchedule";
+import { Helmet } from "react-helmet-async";
 
 const Class = () => {
     const axiosPublic = useAxiosPublic();
@@ -18,6 +19,9 @@ const Class = () => {
     })
     return (
         <div>
+           <Helmet>
+                <title>Fitness Tracker | Clases</title>
+            </Helmet>
             <Cover img={clasesImg} coverTitle='Show All Clases' coverDescription='Say Someting About Class'></Cover>
             <div className="py-14">
               <SectionTitle heading='Weekly Schedule' subHeading='Explore Our Weekly Schedule: Our diverse lineup offers classes for every fitness level and interest. With flexible timings throughout the week, discover an array of sessions tailored to energize, challenge, and enhance your wellness journey.'>

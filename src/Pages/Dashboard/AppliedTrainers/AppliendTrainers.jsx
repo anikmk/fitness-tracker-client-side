@@ -7,9 +7,10 @@ const AppliendTrainers = () => {
     const [applied,refetch] = useAppliedTrainers();
     const axiosSecure = useAxiosSecure();
     console.log(applied)
-    const handleConfirm = (id) => {
+   
+    const handleConfirm = (id,email) => {
         
-        axiosSecure.put(`/trainers/pending/${id}`,{status:'trainer'})
+        axiosSecure.put(`/trainers/pending/${id}`,{status:'trainer',email:email})
         .then(res=>{
             if(res.data.updatedCount > 0){
                 refetch();
@@ -75,7 +76,7 @@ const AppliendTrainers = () => {
             <p className="py-2">available Time Week:{appliedTrainer.availableTimeWeek}</p>
             <p className="py-2">available Time Day:{appliedTrainer.availableTimeDay}</p>
             <div className="modal-action">
-            <button onClick={()=>handleConfirm(appliedTrainer._id)} className="btn mr-5">Confirm</button>
+            <button onClick={()=>handleConfirm(appliedTrainer._id,appliedTrainer.email)} className="btn mr-5">Confirm</button>
             <button className="btn">Reject</button>
             <form method="dialog">
             {/* if there is a button in form, it will close the modal */}

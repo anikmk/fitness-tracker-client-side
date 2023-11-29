@@ -10,6 +10,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import useAdmin from "../hooks/useAdmin";
 import useCoach from "../hooks/useCoach";
 import { FaCalendarPlus } from "react-icons/fa6";
+import { Helmet } from "react-helmet-async";
 
 const Dashboard = () => {
     const { user } = useContext(AuthContext);
@@ -25,6 +26,10 @@ const Dashboard = () => {
 
         
     return (
+        <>
+        <Helmet>
+            <title>Fitness Tracker | Dashboard</title>
+        </Helmet>
         <div className=" lg:flex">
             <div className="w-64 h-screen bg-orange-400">
             <div className="text-center py-5">
@@ -140,6 +145,7 @@ const Dashboard = () => {
                 <Outlet></Outlet>
             </div>
         </div>
+        </>
     );
 };
 

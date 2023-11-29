@@ -4,6 +4,7 @@ import SectionTitle from "../../Components/SectionTitle/SectionTitle";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { useState } from "react";
 import { AiTwotoneDislike, AiTwotoneLike } from "react-icons/ai";
+import { Helmet } from "react-helmet-async";
 
 const Community = () => {
     const axiosPublic = useAxiosPublic();
@@ -32,6 +33,9 @@ const Community = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>Fitness Tracker | Community</title>
+            </Helmet>
             <Cover img={communityImg} coverTitle='Vibrant Community' coverDescription='Dive into Thought-provoking Posts: Explore a diverse range of discussions, from queries to solutions, fostering an inclusive space for knowledge exchange and interactive engagement within our community forum.'></Cover>
             <div className="py-14">
                 <SectionTitle heading='Gain knowledge' subHeading='Explore Community Conversations: Engage with Varied Topics, Ask Queries, and Share Insights. An Interactive Space Fostering Learning, Support, and Knowledge Sharing Amongst Participants.'></SectionTitle>
