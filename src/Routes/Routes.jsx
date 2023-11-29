@@ -23,6 +23,7 @@ import BlogDetails from "../Pages/Home/Blog/BlogDetails";
 import AllUsers from "../Pages/Dashboard/Allusers/AllUsers";
 import AppliendTrainers from "../Pages/Dashboard/AppliedTrainers/AppliendTrainers";
 import Recommended from "../Pages/Dashboard/MamberDashboard/Recommended/Recommended";
+import ManageMember from "../Pages/Dashboard/ManageMember/ManageMember";
 
 
 
@@ -114,6 +115,10 @@ import Recommended from "../Pages/Dashboard/MamberDashboard/Recommended/Recommen
           element:<AppliendTrainers></AppliendTrainers>
         },
         // admin trainer
+        {
+          path:'managemembers',
+          element:<ManageMember></ManageMember>
+        },
         {
           path:'addnewclass',
           element:<AddNewClass></AddNewClass>
